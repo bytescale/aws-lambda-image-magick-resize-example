@@ -36,14 +36,16 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
      --template-body file://buckets-cloudformation.yml
    ```
 
-4. Upload the Lambda Function's code:
+4. Update `function.js` > `imageBucketName` to your image bucket's name.
+
+5. Upload the Lambda Function's code:
    
    ```bash
    zip -ry function-dist.zip .
    aws s3 cp function-dist.zip s3://my-lambda-function-code/AwsLambdaImageResizeExample.zip
    ```
 
-5. Deploy the Lambda Function:
+6. Deploy the Lambda Function:
 
    ```bash
    aws cloudformation create-stack \
@@ -54,7 +56,7 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
      --capabilities CAPABILITY_NAMED_IAM
    ```
 
-6. Wait for the Lambda Function's stack to complete:
+7. Wait for the Lambda Function's stack to complete:
 
    ```bash
    aws cloudformation describe-stack-events \
