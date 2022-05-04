@@ -9,7 +9,7 @@ const s3Key        = "original-image.jpg";
 //
 // Remember to change this!
 //
-const imageBucketName = "upload-example-2-my-images"
+const imageBucketName = "my-images"
 
 module.exports.invoke = async () => {
   await downloadFile(s3Key, localFile);
