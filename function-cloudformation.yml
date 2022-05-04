@@ -1,0 +1,64 @@
+Parameters:
+  LambdaCodeBucketName:
+    Type: String
+    Description: Choose a unique name for the AWS S3 bucket to store Lambda Function code.
+  ImageBucketName:
+    Type: String
+    Description: Choose a unique name for the AWS S3 bucket to store your original photos under.
+
+Resources:
+
+  # Resizes images using ImageMagick.
+  LambdaFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: AwsLambdaImageResizeExample
+      Handler: function.invoke
+      Runtime: nodejs14.x
+      Role: !GetAtt LambdaFunctionRole.Arn
+      MemorySize: 1024
+      Code: 
+        S3Bucket: !Ref LambdaCodeBucketName
+        S3Key: AwsLambdaImageResizeExample.zip
+
+  # Grants the Lambda Function access to S3 and CloudWatch (for logging).
+  LambdaFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+      Policies:
+      - PolicyName: AppendToLogsPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource: "*"
+      - PolicyName: S3FullAccessPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: s3:*
+            Resource:
+            - !Join
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref ImageBucketName
+            - !Join
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref ImageBucketName
+                - '/*'

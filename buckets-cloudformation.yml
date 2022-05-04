@@ -1,0 +1,21 @@
+Parameters:
+  LambdaCodeBucketName:
+    Type: String
+    Description: Choose a unique name for the AWS S3 bucket to store Lambda Function code.
+  ImageBucketName:
+    Type: String
+    Description: Choose a unique name for the AWS S3 bucket to store your original photos under.
+
+Resources:
+
+  # Contains our Lambda Function's code.
+  LambdaFunctionCodeBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref LambdaCodeBucketName
+
+  # Contains our images/photos.
+  ImageBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Ref ImageBucketName
