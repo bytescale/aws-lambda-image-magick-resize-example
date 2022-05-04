@@ -26,7 +26,7 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
    npm install
    ```
 
-3. Create the S3 bucket stack:
+3. Create the S3 bucket stack (remember: change the bucket names in `ParameterValue` below):
 
    ```bash
    aws cloudformation create-stack \
@@ -45,7 +45,7 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
    aws s3 cp function-dist.zip s3://my-lambda-function-code/AwsLambdaImageResizeExample.zip
    ```
 
-6. Deploy the Lambda Function:
+6. Deploy the Lambda Function (remember: change the bucket names in `ParameterValue` below):
 
    ```bash
    aws cloudformation create-stack \
