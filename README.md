@@ -70,7 +70,7 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
 1. Upload the image to resize:
 
    ```bash
-   aws s3 cp test-image.jpg s3://my-images/test-image.jpg
+   aws s3 cp test-image.jpg s3://my-images/original-image.jpg
    ```
 
 2. Invoke the function:
