@@ -100,6 +100,4 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
    }
    ```
    
-   `body` contains the resized image... as a base64-encoded string (see note below).
-
-**Note:** AWS Lambda only supports JSON responses: to return the raw image, you'll need to put API Gateway in front of the Lambda function.
+   **Note:** AWS Lambda only supports JSON responses. `body` contains the resized image as a base64-encoded string: to return the raw image, you'll need to put API Gateway in front of the Lambda function.
