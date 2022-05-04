@@ -6,7 +6,9 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
 
 ## Quick Start
 
-**Important:** replace `my-lambda-function-code` and `my-images` with unique S3 bucket names (throughout the steps).
+**Important:** 
+
+- Replace `my-lambda-function-code` and `my-images` with unique S3 bucket names!
 
 ### Deploying the Lambda Function
 
