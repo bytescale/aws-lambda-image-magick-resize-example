@@ -1,0 +1,23 @@
+{
+  "name": "aws-lambda-image-magick-resize-example",
+  "version": "1.0.0",
+  "description": "AWS Lambda Image Resize Example (using ImageMagick)",
+  "main": "function.js",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upload-io/aws-lambda-image-magick-resize-example.git"
+  },
+  "author": "Upload <hello@upload.io> (https://upload.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upload-io/aws-lambda-image-magick-resize-example/issues"
+  },
+  "homepage": "https://upload.io/blog/aws-lambda-image-resize/"
+}
