@@ -2,7 +2,7 @@
 
 This repository deploys an AWS Lambda Function that resizes images using ImageMagick.
 
-**Blog post:** https://upload.io/blog/aws-lambda-image-resize/
+**Blog post:** https://www.bytescale.com/blog/aws-lambda-image-resize/
 
 ## Quick Start
 
