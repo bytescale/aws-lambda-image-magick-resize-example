@@ -15,7 +15,7 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
 1. Checkout the repository:
  
    ```bash
-   git clone git@github.com:upload-io/aws-lambda-image-magick-resize-example.git
+   git clone git@github.com:bytescale/aws-lambda-image-magick-resize-example.git
    
    cd aws-lambda-image-magick-resize-example
    ```
