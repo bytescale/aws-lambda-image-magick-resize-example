@@ -101,3 +101,7 @@ This repository deploys an AWS Lambda Function that resizes images using ImageMa
    ```
    
    **Note:** AWS Lambda only supports JSON responses. `body` contains the resized image as a base64-encoded string: to return the raw image, you'll need to put API Gateway in front of the Lambda function.
+
+## Local verification
+
+Use Node.js 22 or newer. Run `npm ci` and `npm test` before packaging. The CloudFormation example uses the supported Node.js 22 Lambda runtime, which is compatible with the patched AWS SDK.

@@ -14,7 +14,7 @@ Resources:
     Properties:
       FunctionName: AwsLambdaImageResizeExample
       Handler: function.invoke
-      Runtime: nodejs14.x
+      Runtime: nodejs22.x
       Role: !GetAtt LambdaFunctionRole.Arn
       MemorySize: 1024
       Code: 
